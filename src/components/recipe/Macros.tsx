@@ -11,7 +11,9 @@ export const Macros = component$<MacrosProps>(({ macros }) => {
         return (
           <div key={i} class="flex flex-col items-center">
             <h2 class="text-3xl font-bold">{title}</h2>
-            <p class="text-xl">{value}</p>
+            <p class="text-xl">
+              {value} {title !== "Cals" ? "g" : ""}
+            </p>
           </div>
         );
       })}
