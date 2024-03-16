@@ -27,8 +27,8 @@ export const Switch = component$<SwitchProps>(({ items }) => {
               class={`inline-block w-full rounded-t-lg p-4 
               ${
                 state.value === title
-                  ? "border-b-2 border-blue-600 text-blue-600 hover:text-blue-600 dark:text-blue-600"
-                  : "border-b-2 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-600"
+                  ? "border-b-2 border-fuchsia-600 text-fuchsia-600 hover:text-fuchsia-600 dark:text-fuchsia-400"
+                  : "border-b-2 hover:border-fuchsia-600 hover:text-fuchsia-600 dark:hover:text-fuchsia-400"
               }
                 `}
               onClick$={() => (state.value = title)}
