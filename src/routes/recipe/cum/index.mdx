@@ -24,19 +24,19 @@ export const methodList = ["You know what to do"];
 export const ingredientsAndMethodLists = [
   {
     title: "Ingredients",
-    list: ingredientsList
-  }, 
+    list: ingredientsList,
+  },
   {
     title: "Method",
     list: methodList,
-  }
-  ];
+  },
+];
 
 <div class="md:hidden">
   <Switch items={ingredientsAndMethodLists} />
 </div>
 
-<div class="justify-between hidden md:flex">
+<div class="hidden justify-between md:flex">
   <div class="flex flex-col gap-y-2">
     <h2 class="text-3xl">Ingredients:</h2>
     <List list={ingredientsList} />
@@ -46,4 +46,3 @@ export const ingredientsAndMethodLists = [
     <List list={methodList} />
   </div>
 </div>
-
