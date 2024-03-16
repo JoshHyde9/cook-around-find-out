@@ -4,6 +4,8 @@ title: Cum!
 
 import { Heading } from "~/components/recipe/Heading";
 import { Macros } from "~/components/recipe/Macros";
+import { List } from "~/components/recipe/List";
+import { Switch } from "~/components/Switch";
 
 export const macros = [
   { title: "Cals", value: 513 },
@@ -12,6 +14,36 @@ export const macros = [
   { title: "Fats", value: 9 },
 ];
 
+export const ingredientsList = ["Cum"];
+export const methodList = ["You know what to do"];
+
 <Heading title="Cum" />
 
 <Macros macros={macros} />
+
+export const ingredientsAndMethodLists = [
+  {
+    title: "Ingredients",
+    list: ingredientsList
+  }, 
+  {
+    title: "Method",
+    list: methodList,
+  }
+  ];
+
+<div class="md:hidden">
+  <Switch items={ingredientsAndMethodLists} />
+</div>
+
+<div class="justify-between hidden md:flex">
+  <div class="flex flex-col gap-y-2">
+    <h2 class="text-3xl">Ingredients:</h2>
+    <List list={ingredientsList} />
+  </div>
+  <div class="flex flex-col gap-y-2">
+    <h2 class="text-3xl">Method:</h2>
+    <List list={methodList} />
+  </div>
+</div>
+
