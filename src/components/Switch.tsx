@@ -39,9 +39,9 @@ export const Switch = component$<SwitchProps>(({ items }) => {
         })}
       </div>
       {state.value === "Ingredients" ? (
-        <List list={getList("Ingredients", items)} />
+        <List type="unordered" list={getList("Ingredients", items)} />
       ) : (
-        <List list={getList("Method", items)} />
+        <List type="ordered" list={getList("Method", items)} />
       )}
     </div>
   );
