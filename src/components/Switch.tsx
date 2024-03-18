@@ -4,12 +4,12 @@ import { List } from "./recipe/List";
 type SignalProps = "Ingredients" | "Method";
 
 type SwitchProps = {
-  items: [{ title: SignalProps; list: string[] }];
+  items: { title: SignalProps; list: string[] }[];
 };
 
 export const getList = (
   title: SignalProps,
-  items: [{ title: SignalProps; list: string[] }],
+  items: { title: SignalProps; list: string[] }[],
 ) => {
   return items.find((obj) => obj.title === title)!.list;
 };
