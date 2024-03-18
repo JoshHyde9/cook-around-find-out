@@ -24,11 +24,11 @@ export const Switch = component$<SwitchProps>(({ items }) => {
           return (
             <button
               key={i}
-              class={`inline-block w-full rounded-t-lg p-4 
+              class={`inline-block w-full rounded-t-lg border-b-2 p-4 hover:text-fuchsia-600
               ${
                 state.value === title
-                  ? "border-b-2 border-fuchsia-600 text-fuchsia-600 hover:text-fuchsia-600 dark:text-fuchsia-400"
-                  : "border-b-2 hover:border-fuchsia-600 hover:text-fuchsia-600 dark:hover:text-fuchsia-400"
+                  ? "border-fuchsia-600 text-fuchsia-600 dark:text-fuchsia-400"
+                  : "hover:border-fuchsia-600 hover:text-fuchsia-600 dark:hover:text-fuchsia-400"
               }
                 `}
               onClick$={() => (state.value = title)}
