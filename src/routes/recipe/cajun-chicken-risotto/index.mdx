@@ -4,6 +4,7 @@ title: Cajun Chicken Risotto
 
 import { Heading } from "~/components/Heading";
 import { Switch } from "~/components/Switch";
+import { Back } from "~/components/Back";
 
 import { Macros } from "~/components/recipe/Macros";
 import { List } from "~/components/recipe/List";
@@ -45,6 +46,8 @@ export const methodList = [
   "Add your rice and let toast for a minute before adding in your can of diced tomatoes and chicken stock. Simmer until the rice is cooked.",
 ];
 
+<Back title="Back" />
+
 <Heading title="Cajun Chicken Risotto" />
 
 <Macros macros={macros} />
@@ -74,3 +77,4 @@ export const ingredientsAndMethodLists = [
     <List type="ordered" list={methodList} />
   </div>
 </div>
+
