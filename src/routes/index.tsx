@@ -23,14 +23,14 @@ export default component$(() => {
           ]}
         />
         <Card
-          title="Cum"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis reiciendis, debitis sequi eos aliquam error? Vitae distinctio eius excepturi atque!"
-          slug="cum"
+          title="Spicy Chicken & Sweet Potatoes"
+          description="Spicy chicken & sweet potatoes"
+          slug="spicy-chicken-sweet-potato"
           macros={[
-            { title: "Cals", value: 513 },
-            { title: "Protein", value: 51 },
-            { title: "Carbs", value: 60 },
-            { title: "Fats", value: 9 },
+            { title: "Cals", value: 453 },
+            { title: "Protein", value: 58 },
+            { title: "Carbs", value: 42 },
+            { title: "Fats", value: 5 },
           ]}
         />
         <Card
