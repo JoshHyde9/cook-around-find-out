@@ -13,7 +13,7 @@ export const Card = component$<CardProps>(
   ({ title, description, slug, macros }) => {
     return (
       <Link href={`/recipe/${slug}`}>
-        <div class="h-44 max-w-sm overflow-hidden rounded shadow-md shadow-fuchsia-400">
+        <div class="h-44 w-[22rem] overflow-hidden rounded shadow-md shadow-fuchsia-400 md:w-96">
           <div class="flex h-full flex-col justify-between px-6 py-4">
             <div class="mb-2 text-xl font-bold text-gray-900 dark:text-white">
               {title}
