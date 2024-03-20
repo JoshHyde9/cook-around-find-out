@@ -84,7 +84,9 @@ export const head: DocumentHead = ({ resolveValue }) => {
     meta: [
       {
         name: "description",
-        content: recipe?.description ? recipe.description : "What is this?",
+        content: recipe?.description
+          ? recipe.description
+          : "Sorry, this recipe does not exist.",
       },
     ],
   };

@@ -32,7 +32,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Published recipes that I have piss-farted around with or found online and changed to my liking ",
+        "Published recipes that I have piss-farted around with or found online and changed to my liking.",
     },
   ],
 };
