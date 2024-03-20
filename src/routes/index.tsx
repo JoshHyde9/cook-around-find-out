@@ -3,6 +3,7 @@ import { component$ } from "@builder.io/qwik";
 
 import { Card } from "~/components/Card";
 import { Heading } from "~/components/Heading";
+import { recipes } from "~/db/recipes";
 
 export default component$(() => {
   return (
@@ -11,50 +12,15 @@ export default component$(() => {
         <Heading title="Cook Around and Find Out" />
       </div>
       <div class="container mx-auto flex max-w-screen-xl flex-wrap justify-center gap-4">
-        <Card
-          title="Cajun Chicken Risotto"
-          description="Spicy chicken risotto with sautéed capsicum, celery and onion."
-          slug="cajun-chicken-risotto"
-          macros={[
-            { title: "Cals", value: 513 },
-            { title: "Protein", value: 51 },
-            { title: "Carbs", value: 60 },
-            { title: "Fats", value: 9 },
-          ]}
-        />
-        <Card
-          title="Spicy Chicken & Sweet Potatoes"
-          description="Spicy chicken & sweet potatoes"
-          slug="spicy-chicken-sweet-potato"
-          macros={[
-            { title: "Cals", value: 453 },
-            { title: "Protein", value: 58 },
-            { title: "Carbs", value: 42 },
-            { title: "Fats", value: 5 },
-          ]}
-        />
-        <Card
-          title="Cum"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis reiciendis, debitis sequi eos aliquam error? Vitae distinctio eius excepturi atque!"
-          slug="cum"
-          macros={[
-            { title: "Cals", value: 513 },
-            { title: "Protein", value: 51 },
-            { title: "Carbs", value: 60 },
-            { title: "Fats", value: 9 },
-          ]}
-        />
-        <Card
-          title="Cum"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis reiciendis, debitis sequi eos aliquam error? Vitae distinctio eius excepturi atque!"
-          slug="cum"
-          macros={[
-            { title: "Cals", value: 513 },
-            { title: "Protein", value: 51 },
-            { title: "Carbs", value: 60 },
-            { title: "Fats", value: 9 },
-          ]}
-        />
+        {recipes.map((recipe) => (
+          <Card
+            key={recipe.slug}
+            title={recipe.title}
+            description={recipe.description}
+            macros={recipe.macros}
+            slug={recipe.slug}
+          />
+        ))}
       </div>
     </div>
   );
