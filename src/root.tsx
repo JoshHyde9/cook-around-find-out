@@ -19,11 +19,11 @@ export default component$(() => {
   return (
     <QwikCityProvider>
       <head>
-        <meta charSet="utf-8" />
+        <meta charset="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body lang="en" class="min-h-screen bg-white dark:bg-gray-900">
+      <body lang="en">
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
