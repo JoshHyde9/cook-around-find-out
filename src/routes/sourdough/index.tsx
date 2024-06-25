@@ -5,6 +5,7 @@ export default component$(() => {
   return (
     <section>
       <h1 class="text-center text-4xl">Sourdough</h1>
+      {/* Making a starter */}
       <section class="mt-4 bg-stone-200 p-4">
         <section class="my-2 pb-4 text-center">
           <section class="mb-2">
@@ -43,6 +44,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
+      {/* Liquid Starter */}
       <section class="bg-stone-800 p-4 text-stone-200">
         <h4 class="text-center text-xl">Liquid starter</h4>
         <p class="my-2 text-center">
@@ -94,6 +96,59 @@ export default component$(() => {
             you use for baking.
           </p>
         </div>
+      </section>
+
+      {/* Sourdough Bread Recipe */}
+      <section class="bg-stone-200 p-4 text-center">
+        <h2 class="text-2xl">Sourdough Bread Recipe</h2>
+
+        <p>
+          This is the recipe I was taught but, find a recipe you like the most
+          and don't be scared to try new things. This recipe also uses a stiff
+          starter.
+        </p>
+
+        <p class="mt-2">
+          I like sourdough "Vienna" shaped and bake on a pizza stone but, if you
+          don't have a stone you can just bake it on baking paper that is
+          sitting on a wire-rack that is on a baking tray.
+        </p>
+
+        <ul class="my-4">
+          <li>Flour: 100%</li>
+          <li>Water: 68%</li>
+          <li>Stiff Starter: 50%</li>
+          <li>Salt: 3%</li>
+          <li>Malt Extract or Powder: 1.5%</li>
+          <li>E.Y.F: 2.225 (add all % together and / 100)</li>
+        </ul>
+
+        <p>
+          I like to have 800 g loaves (0.8 / 2.225) = 360 g (this is your flour
+          weight) and the recipe now looks like this:
+        </p>
+
+        <ul class="my-4">
+          <li>Flour: 360 g</li>
+          <li>Water: 245 g (360 * 68%)</li>
+          <li>Stiff Starter: 180 g (360 * 50%)</li>
+          <li>Salt: 10.8 g (360 * 3%)</li>
+          <li>Malt Extract or Powder: 5.4 g (360 * 1.5%)</li>
+          <li>E.Y.F: 2.225</li>
+        </ul>
+
+        <p class="mt-2">
+          You may find yourself increasing the hydration to ~ 70%. You'll also
+          probably end up ditching this recipe entirely because low hydration
+          recipes are difficult to get right. Also the sourdough cult will be at
+          your throat for not using 75 - 90% hydration.
+        </p>
+
+        <p class="mt-2">
+          Preheat oven to 240&deg;C. Bake at 220&deg;C with steam (put boiling
+          water in a pan and place at the bottom of the oven) for 20 minutes
+          then drop the temp to 200&deg;C until golden brown.
+        </p>
       </section>
     </section>
   );
