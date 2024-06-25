@@ -184,7 +184,7 @@ export default component$(() => {
             <p>
               If the scoring isn't springing open, the dough is over hydrated.
             </p>
-            <p> If the bread is cracking, the dough is under-fermented.</p>
+            <p>If the bread is cracking, the dough is under-fermented.</p>
           </section>
         </section>
       </section>
