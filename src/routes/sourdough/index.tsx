@@ -80,6 +80,7 @@ export default component$(() => {
           <h4 class="text-center text-xl">Feeding</h4>
           <p class="text-center">
             Mix 50 g starter into a new jar with 100 g flour and 130 g water.
+            Your discard is what you use for baking.
           </p>
         </div>
 
@@ -147,8 +148,45 @@ export default component$(() => {
         <p class="mt-2">
           Preheat oven to 240&deg;C. Bake at 220&deg;C with steam (put boiling
           water in a pan and place at the bottom of the oven) for 20 minutes
-          then drop the temp to 200&deg;C until golden brown.
+          then drop the temp to 200&deg;C, remove the pan and bake until golden
+          brown.
         </p>
+      </section>
+
+      {/* What Went Wrong? */}
+      <section class="bg-stone-400 p-4 text-white">
+        <h2 class="text-center text-2xl">What Went Wrong?</h2>
+        <section class="mt-4 flex flex-col gap-2 md:flex-row md:justify-around">
+          <section class="flex-1">
+            <h3 class="text-lg">Dough cracking whilst baking</h3>
+            <p>
+              Not enough gluten development. The dough should have a completely
+              smooth surface when you shape it into a tight ball.
+            </p>
+          </section>
+          <section class="flex-1">
+            <h3 class="text-lg">Dough went flat whilst baking</h3>
+            <p>
+              You let the ferment process go for too long. Gluten strands were
+              stretched too far, causing them to weaken and collapse under heat.
+              To stop this from happening, always do the "poke test" to know
+              when the dough is ready.
+            </p>
+          </section>
+          <section class="flex-1">
+            <h3 class="text-lg">
+              Braed lifts off the baking plate but does not expand upwards
+            </h3>
+            <p>
+              There are many factors that can cause this. Higher hydration
+              doughs will expand outwards and only slightly up.
+            </p>
+            <p>
+              If the scoring isn't springing open, the dough is over hydrated.
+            </p>
+            <p> If the bread is cracking, the dough is under-fermented.</p>
+          </section>
+        </section>
       </section>
     </section>
   );
