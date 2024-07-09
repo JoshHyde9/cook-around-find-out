@@ -1,14 +1,21 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import type {
+  DocumentHead,
+  StaticGenerateHandler,
+} from "@builder.io/qwik-city";
+import { inlineTranslate } from "qwik-speak";
+
+import { config } from "~/speak-config";
 
 export default component$(() => {
+  const t = inlineTranslate();
   return (
     <>
       <h1>Hi 👋</h1>
       <div>
         Can't wait to see what you build with qwik!
         <br />
-        Happy coding.
+        {t("site.messages.why?")}
       </div>
     </>
   );
@@ -22,4 +29,14 @@ export const head: DocumentHead = {
       content: "Qwik site description",
     },
   ],
+};
+
+export const onStaticGenerate: StaticGenerateHandler = () => {
+  return {
+    params: config.supportedLocales.map((locale) => {
+      return {
+        lang: locale.lang === config.defaultLocale.lang ? "." : locale.lang,
+      };
+    }),
+  };
 };

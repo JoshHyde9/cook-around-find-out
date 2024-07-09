@@ -18,6 +18,7 @@ import {
 import { manifest } from "@qwik-client-manifest";
 import Root from "./root";
 import { isDev } from "@builder.io/qwik/build";
+import { config } from "./speak-config";
 
 /**
  * Determine the base URL to use for loading the chunks in the browser.
@@ -37,8 +38,9 @@ export default function (opts: RenderToStreamOptions) {
     manifest,
     ...opts,
     // Use container attributes to set attributes on the html tag.
+    base: extractBase,
     containerAttributes: {
-      lang: "en-us",
+      lang: opts.serverData?.locale || config.defaultLocale.lang,
       ...opts.containerAttributes,
     },
     serverData: {
