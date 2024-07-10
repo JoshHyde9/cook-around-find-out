@@ -7,10 +7,10 @@ export const Card = component$<RecipeCollectionEntry>(({ data, slug }) => {
 
   return (
     <a href={slug}>
-      <div class="flex flex-col overflow-hidden rounded shadow-lg">
+      <div class="flex h-full flex-col overflow-hidden rounded shadow-lg">
         <div class="relative">
           <img
-            class="w-full"
+            class="h-full w-full object-cover"
             src={data.thumbnail.src}
             alt={data.thumbnail.alt}
             width={0}
