@@ -1,3 +1,4 @@
+/* eslint-disable qwik/loader-location */
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { collections } from "virtual:mdx-collection";
 
