@@ -1,5 +1,8 @@
 {
   "site": {
-    "messages": { "why?": "why?" }
+    "home": {
+      "title": "Cook Around and Find Out",
+      "description": "Published recipes that I have piss-farted around with or found online and changed to my liking"
+    }
   }
 }

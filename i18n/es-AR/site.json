@@ -1,5 +1,8 @@
 {
   "site": {
-    "messages": { "why?": "Por qué?" }
+    "home": {
+      "title": "Averígüelo Cocinando",
+      "description": "Recetas que he hecho o encontrado"
+    }
   }
 }
