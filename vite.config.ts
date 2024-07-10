@@ -5,9 +5,16 @@
 import { defineConfig, type UserConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
+
 import {qwikSpeakInline} from "qwik-speak/inline";
+import { z } from "zod";
+
 import tsconfigPaths from "vite-tsconfig-paths";
+
 import pkg from "./package.json";
+
+import mdxCollections from "./plugins/collections";
+import { rewriteRoutes } from "./src/speak-routes";
 
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
@@ -22,7 +29,30 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
  */
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
-    plugins: [qwikCity(), qwikVite(), qwikSpeakInline({supportedLangs: ["en-AU, es-AR", ], defaultLang: "en-AU", assetsPath: "i18n"}), tsconfigPaths()],
+    plugins: [
+      mdxCollections({
+        collections: [
+          {
+            name: "content",
+            glob: "./src/content/**/**/*.mdx",
+            schema: z.object({
+              date: z.coerce.date(),
+              tags: z.array(z.string()).default([]),
+              title: z.string(),
+              description: z.string(),
+              thumbnail: z.object({
+                alt: z.string(),
+                src: z.string(),
+              }),
+              permalink: z.string(),
+              lang: z.string(),
+            }),
+          },
+        ],
+      }),
+      qwikCity({
+      rewriteRoutes,
+    }), qwikVite(), qwikSpeakInline({supportedLangs: ["en-AU, es-AR", ], defaultLang: "en-AU", assetsPath: "i18n"}), tsconfigPaths()],
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
       // Put problematic deps that break bundling here, mostly those with binaries.
