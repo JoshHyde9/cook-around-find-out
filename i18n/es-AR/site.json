@@ -3,6 +3,10 @@
     "home": {
       "title": "Averígüelo Cocinando",
       "description": "Recetas que he hecho o encontrado"
+    },
+    "messages": {
+      "updated": "actualizado",
+      "return-previous-page": "volver a página anterior"
     }
   }
 }

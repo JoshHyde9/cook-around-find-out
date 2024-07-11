@@ -19,3 +19,11 @@ h6 {
 body {
   font-family: "EB Garamond", serif;
 }
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}

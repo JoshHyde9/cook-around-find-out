@@ -3,6 +3,10 @@
     "home": {
       "title": "Cook Around and Find Out",
       "description": "Published recipes that I have piss-farted around with or found online and changed to my liking"
+    },
+    "messages": {
+      "updated": "updated",
+      "return-previous-page": "return to previous page"
     }
   }
 }

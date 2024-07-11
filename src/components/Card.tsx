@@ -1,6 +1,7 @@
 import type { RecipeCollectionEntry } from "~/content";
 import { component$ } from "@builder.io/qwik";
 import { useFormatDate } from "qwik-speak";
+import { Tag } from "./Tag";
 
 export const Card = component$<RecipeCollectionEntry>(({ data, slug }) => {
   const fd = useFormatDate();
@@ -34,11 +35,7 @@ export const Card = component$<RecipeCollectionEntry>(({ data, slug }) => {
           </span>
 
           <div class="font-regular mr-1 flex flex-row items-center py-1 text-xs text-gray-900">
-            {data.tags?.map((tag) => (
-              <span key={tag} class="rounded-sm bg-slate-200 px-3 py-1">
-                {tag}
-              </span>
-            ))}
+            {data.tags?.map((tag) => <Tag key={tag}>{tag}</Tag>)}
           </div>
         </div>
       </div>
