@@ -85,7 +85,7 @@ export const head: DocumentHead = ({ params }) => {
     description: recipe.description,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://cook-around-find-out.vercel.app/${recipe.permalink}`,
+      "@id": `https://cook-around-find-out.vercel.app${recipe.permalink}`,
     },
   };
 
@@ -106,7 +106,7 @@ export const head: DocumentHead = ({ params }) => {
       },
       {
         name: "og:url",
-        content: `https://cook-around-find-out.vercel.app/${recipe.permalink}`,
+        content: `https://cook-around-find-out.vercel.app${recipe.permalink}`,
       },
       {
         name: "og:image",
