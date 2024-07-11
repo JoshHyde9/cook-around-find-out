@@ -108,6 +108,10 @@ export const head: DocumentHead = ({ params }) => {
         name: "og:url",
         content: `https://cook-around-find-out.vercel.app/${recipe.permalink}`,
       },
+      {
+        name: "og:image",
+        content: `${recipe.thumbnail.src}`,
+      },
 
       // Twitter
       {
