@@ -33,12 +33,15 @@ export const onRequest: RequestHandler = ({
   const path = `/src/content/${locale()}/${slug}.mdx`;
   const mod = modules[path];
 
+  console.log(path);
+
   if (!mod) {
     // Try to find the recipe in other available locales
     for (const supportedLocale of config.supportedLocales) {
       if (supportedLocale.lang === locale()) continue;
 
       const newPath = `/src/content/${supportedLocale.lang}/${slug}.mdx`;
+
       if (modules[newPath]) {
         throw redirect(302, getPath(pathname, supportedLocale.lang));
       }
