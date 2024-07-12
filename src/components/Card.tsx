@@ -1,13 +1,21 @@
-import type { RecipeCollectionEntry } from "~/content";
+import type { RecipeCollectionEntry } from "~/recipes";
+
 import { component$ } from "@builder.io/qwik";
 import { useFormatDate } from "qwik-speak";
+
 import { Tag } from "./Tag";
+import { config } from "~/speak-config";
 
 export const Card = component$<RecipeCollectionEntry>(({ data, slug }) => {
   const fd = useFormatDate();
 
+  const href =
+    data.lang === config.defaultLocale.lang
+      ? `/${slug}`
+      : `/${data.lang}/${slug}`;
+
   return (
-    <a href={slug}>
+    <a href={href}>
       <div class="flex h-full flex-col overflow-hidden rounded shadow-lg">
         <div class="relative">
           <img

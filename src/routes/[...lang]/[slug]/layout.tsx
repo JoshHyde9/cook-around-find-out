@@ -1,7 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { inlineTranslate, useFormatDate } from "qwik-speak";
 import { Tag } from "~/components/Tag";
-import { useRecipe } from "~/content";
+import { useRecipe } from "~/recipes";
 
 export default component$(() => {
   const recipeSig = useRecipe();
@@ -54,4 +54,4 @@ export default component$(() => {
   );
 });
 
-export { useRecipe } from "~/content";
+export { useRecipe } from "~/recipes";

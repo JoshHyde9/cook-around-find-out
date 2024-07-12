@@ -11,10 +11,10 @@ import { isDev } from "@builder.io/qwik/build";
 import { translatePath, useSpeakLocale } from "qwik-speak";
 import { collections } from "virtual:mdx-collection";
 
-import { getCollectionEntry } from "~/content";
+import { getCollectionEntry } from "~/recipes";
 import { config } from "~/speak-config";
 
-const modules: Record<string, any> = import.meta.glob("/src/content/**/*.mdx", {
+const modules: Record<string, any> = import.meta.glob("/src/recipes/**/*.mdx", {
   eager: !isDev,
   import: "default",
 });
@@ -28,9 +28,10 @@ export const onRequest: RequestHandler = ({
 }) => {
   const { slug } = params;
   const getPath = translatePath();
+
   if (!locale()) throw error(404, "Page not found for requested locale");
 
-  const path = `/src/content/${locale()}/${slug}.mdx`;
+  const path = `/src/recipes/${locale()}/${slug}.mdx`;
   const mod = modules[path];
 
   if (!mod) {
@@ -51,12 +52,14 @@ export default component$(() => {
   const RecipeContent = useSignal<any>();
   const { lang } = useSpeakLocale();
   const slug = useLocation().params.slug;
-  const path = `/src/content/${lang}/${slug}.mdx`;
+
+  const path = `/src/recipes/${lang}/${slug}.mdx`;
 
   useTask$(() => {
     const qrl = $(async () => {
       const mod = isDev ? await modules[path]() : modules[path];
       const recipeContent = mod();
+
       return recipeContent;
     });
 
@@ -135,7 +138,7 @@ export const head: DocumentHead = ({ params }) => {
 };
 
 export const onStaticGenerate: StaticGenerateHandler = async () => {
-  const params = collections.content.map((entry) => {
+  const params = collections.recipes.map((entry) => {
     const { slug } = entry;
     const { lang } = entry.data;
 

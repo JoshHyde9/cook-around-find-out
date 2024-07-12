@@ -33,8 +33,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
       mdxCollections({
         collections: [
           {
-            name: "content",
-            glob: "./src/content/**/**/*.mdx",
+            name: "recipes",
+            glob: "./src/recipes/**/**/*.mdx",
             schema: z.object({
               date: z.coerce.date(),
               tags: z.array(z.string()).default([]),

@@ -4,10 +4,11 @@ import { collections } from "virtual:mdx-collection";
 
 import { getLang } from "~/utils/getLang";
 
-export type RecipeCollectionEntry = Collections["content"][number];
+export type RecipeCollectionEntry = Collections["recipes"][number];
 
 export const getCollectionEntry = (slug: string) => {
-  const collection = collections.content;
+  const collection = collections.recipes;
+
   const entry = collection.find((entry_) => entry_.slug === slug);
 
   if (!entry) return null;
@@ -16,7 +17,7 @@ export const getCollectionEntry = (slug: string) => {
 };
 
 export const getCollectionList = (locale: string) => {
-  const collection = collections.content;
+  const collection = collections.recipes;
   const list = collection.filter((entry) => entry.data.lang === locale);
 
   return list;
@@ -37,6 +38,7 @@ export const useRecipes = routeLoader$(async ({ locale, error }) => {
 export const useRecipe = routeLoader$(async ({ params, error }) => {
   try {
     const recipe = getCollectionEntry(params.slug);
+
     if (!recipe) throw error(404, `Recipe ${params.slug} not found`);
 
     return recipe;

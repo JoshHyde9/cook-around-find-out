@@ -1,5 +1,5 @@
 type Collections = {
-    content: {
+    recipes: {
         data: {
             date: Date;
             tags?: string[];

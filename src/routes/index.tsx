@@ -1,13 +1,15 @@
-import { component$ } from "@builder.io/qwik";
-import {
-  type DocumentHead,
-  type StaticGenerateHandler,
+import type {
+  DocumentHead,
+  StaticGenerateHandler,
 } from "@builder.io/qwik-city";
+
+import { component$ } from "@builder.io/qwik";
 import { inlineTranslate } from "qwik-speak";
-import { Card } from "~/components/Card";
-import { useRecipes } from "~/content";
 
 import { config } from "~/speak-config";
+import { useRecipes } from "~/recipes";
+
+import { Card } from "~/components/Card";
 
 export default component$(() => {
   const t = inlineTranslate();
@@ -49,4 +51,4 @@ export const onStaticGenerate: StaticGenerateHandler = () => {
   };
 };
 
-export { useRecipes } from "~/content";
+export { useRecipes } from "~/recipes";
